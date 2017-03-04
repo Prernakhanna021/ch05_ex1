@@ -14,9 +14,11 @@ if ($action == NULL) {
 if($action == 'delete_category'){
     $categoryID = filter_input(INPUT_POST, 'category_id');
     delete_category($categoryID);
+    header('Location: .?action=list_categories')
 }else if($action == 'add_category'){
     $categoryName = filter_input(INPUT_POST, 'categoryName');
     add_category($categoryName);
+    header('Location: .?action=list_categories')
 }else if($action == 'list_categories'){
     $categories = get_categories();
     include('category_list.php');
