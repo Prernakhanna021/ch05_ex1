@@ -10,7 +10,7 @@
       <?php foreach ($categories as $category) : ?>
       <tr>
           <td><?php echo $category['categoryName']; ?></td>
-          <td><form action="delete_category.php" method="post">
+          <td><form action="index.php?action=delete_category" method="post">
               <input type="hidden" name="category_id"
                      value="<?php echo $category['categoryID']; ?>">
               <input type="submit" value="Delete">
@@ -21,10 +21,9 @@
   </table>
 
     <h2>Add Category</h2>
-    <form action="add_category.php" method="post"
-          id="add_category_form">
+    <form action="index.php?action=add_category" method="post" id="add_category_form">
           <label>Name:</label>
-          <input type="text" name="name"><br>
+          <input type="text" name="categoryName"><br>
           <input type="submit" value="Add Category"><br>
       </form>
 

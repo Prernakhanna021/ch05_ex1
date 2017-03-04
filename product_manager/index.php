@@ -11,7 +11,13 @@ if ($action == NULL) {
     }
 }
 
-if($action == 'list_categories'){
+if($action == 'delete_category'){
+    $categoryID = filter_input(INPUT_POST, 'category_id');
+    delete_category($categoryID);
+}else if($action == 'add_category'){
+    $categoryName = filter_input(INPUT_POST, 'categoryName');
+    add_category($categoryName);
+}else if($action == 'list_categories'){
     $categories = get_categories();
     include('category_list.php');
 }else if ($action == 'list_products') {
