@@ -12,6 +12,7 @@ if ($action == NULL) {
 }
 
 if($action == 'list_categories'){
+    $categories = get_categories();
     include('category_list.php');
 }else if ($action == 'list_products') {
     $category_id = filter_input(INPUT_GET, 'category_id',
