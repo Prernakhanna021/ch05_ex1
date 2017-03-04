@@ -20,4 +20,26 @@ function get_category_name($category_id) {
     $category_name = $category['categoryName'];
     return $category_name;
 }
+
+function add_category($name){
+  global $db;
+  $query = 'INSERT INTO categories_guitar1
+               (categoryName)
+            VALUES
+               (:name)';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':name', $name);
+  $statement->execute();
+  $statement->closeCursor();
+}
+
+function delete_category($categoryID){
+  $query = 'DELETE FROM categories_guitar1
+            WHERE categoryID = :categoryID';
+  $statement = $db->prepare($query);
+  $statement->bindValue(':categoryID', $category_id);
+  $success = $statement->execute();
+  $statement->closeCursor();
+}
+
 ?>
