@@ -1,20 +1,7 @@
 <?php include '../view/header.php'; ?>
 <main>
     <aside>
-        <h1>Categories</h1>
-        <nav>
-            <ul class="nav">
-                <!-- display links for all categories -->
-                <?php foreach($categories as $category) : ?>
-                <li>
-                    <a href="?category_id=<?php 
-                              echo $category['categoryID']; ?>">
-                        <?php echo $category['categoryName']; ?>
-                    </a>
-                </li>
-                <?php endforeach; ?>
-            </ul>
-        </nav>
+        <?php include '../view/categories_nav.php'; ?>
     </aside>
     <section>
         <h1><?php echo $name; ?></h1>
@@ -35,7 +22,7 @@
                 <input type="hidden" name="product_id"
                        value="<?php echo $product_id; ?>">
                 <b>Quantity:</b>
-                <input id="quantity" type="text" name="quantity" 
+                <input id="quantity" type="text" name="quantity"
                        value="1" size="2">
                 <br><br>
                 <input type="submit" value="Add to Cart">
