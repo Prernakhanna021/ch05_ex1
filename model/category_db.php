@@ -33,7 +33,7 @@ function add_category($name){
   $statement->closeCursor();
 }
 
-function delete_category($categoryID){
+function delete_category($category_id){
   $query = 'DELETE FROM categories_guitar1
             WHERE categoryID = :categoryID';
   $statement = $db->prepare($query);
