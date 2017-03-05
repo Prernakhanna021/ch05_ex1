@@ -34,6 +34,7 @@ function add_category($name){
 }
 
 function delete_category($category_id){
+  global $db;
   $query = 'DELETE FROM categories_guitar1
             WHERE categoryID = :categoryID';
   $statement = $db->prepare($query);
